@@ -688,7 +688,86 @@ function throttle(func, limit) {
 const optimizedResize = debounce(handleResize, 250);
 window.addEventListener('resize', optimizedResize);
 
-// 
 document.getElementById('more').addEventListener('click', () => {
-    alert('TODO: fetch API でさらに読み込む');
+    const documentsArea = document.getElementById('documents');
+
+    // 記事カードの定義（実際にはAPIから取得する）
+    const articles = [
+        {
+            title: "テスト",
+            date: "2025-08-06",
+            category: "テスト2",
+            color: "#30af7a",
+            href: "#",
+            image: "images/hero-bg-4.jpg",
+            alt: "テスト画像",
+            description: "これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。"
+        },
+        {
+            title: "テスト",
+            date: "2025-08-06",
+            category: "テスト2",
+            color: "#30af7a",
+            href: "#",
+            image: "images/hero-bg-4.jpg",
+            alt: "テスト画像",
+            description: "これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。"
+        },
+        {
+            title: "テスト",
+            date: "2025-08-06",
+            category: "テスト2",
+            color: "#30af7a",
+            href: "#",
+            image: "images/hero-bg-4.jpg",
+            alt: "テスト画像",
+            description: "これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。"
+        },
+        {
+            title: "テスト",
+            date: "2025-08-06",
+            category: "テスト2",
+            color: "#30af7a",
+            href: "#",
+            image: "images/hero-bg-4.jpg",
+            alt: "テスト画像",
+            description: "これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。"
+        },
+        {
+            title: "テスト",
+            date: "2025-08-06",
+            category: "テスト2",
+            color: "#30af7a",
+            href: "#",
+            image: "images/hero-bg-4.jpg",
+            alt: "テスト画像",
+            description: "これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。"
+        },
+    ];
+
+    for (let i = 0; i < articles.length; i++) {
+        const article = articles[i];
+
+        const newDom = `<a href="${article.href}"><div class="document-card" data-document="rules">
+                    <h4>${article.title}</h4>
+                    <div class="card-head">
+                        <span class="category" style="background-color: ${article.color};">${article.category}</span>
+                        <span class="date">${article.date}</span>
+                    </div>
+                    <div class="document-img">
+                        <img src="${article.image}" alt="${article.alt}">
+                    </div>
+                    <p>${article.description}</p>
+                </div></a>`;
+
+        documentsArea.innerHTML += newDom;
+    }
+});
+
+// メニュー
+document.getElementById('menu-open').addEventListener('click', () => {
+    document.getElementById('menu').style.display = 'block';
+});
+document.getElementById('menu-close').addEventListener('click', () => {
+    document.getElementById('menu').style.display = 'none';
 });

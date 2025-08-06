@@ -15,6 +15,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- メニュー -->
+    <a href="javascript:void(0);" id="menu-open">
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+            <div>MENU</div>
+        </div>
+    </a>
+
+    <div class="menu" id="menu">
+        <a href="javascript:void(0);" id="menu-close">
+            <div class="menu-btn close">
+                <i class="fas fa-times"></i>
+                <div>CLOSE</div>
+            </div>
+        </a>
+
+        <div class="menu-body">
+            これはメニューです
+        </div>
+    </div>
+
     <!-- ヒーローセクション -->
     <section class="hero-section">
         <div class="background-slider">
@@ -85,51 +106,84 @@
         </div>
     </section>
 
+    <!-- お知らせ -->
+     <section class="information-section">
+        <div class="container">
+            <h2 class="section-title">お知らせ</h2>
+            <div class="information">
+                <ul>
+                    <li><a href="">テストお知らせです。</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- ドキュメントセクション -->
     <section class="documents-section">
         <div class="container">
-            <h2 class="section-title">記事</h2>  <!-- 資料・ドキュメント -->
-            <div class="documents-grid">
-                <a href="https://nonotchi.tech/" target="_blank"><div class="document-card" data-document="rules">
+            <h2 class="section-title">最新記事</h2>  <!-- 資料・ドキュメント -->
+            <div class="documents-grid" id="documents">
+                <a href="#" target="_blank"><div class="document-card" data-document="rules">
                     <h4>サークル規約</h4>
-                    <p class="date">2025-08-05</p>
+                    <div class="card-head">
+                        <span class="category test">テスト</span>
+                        <span class="date">2025-08-05</span>
+                    </div>
                     <div class="document-img">
                         <img src="images/hero-bg-1.jpg" alt="テスト画像">
                     </div>
                     <p>ZEN大学起業サークルの活動規約と入会について詳しく記載されています。</p>
                 </div></a>
-                <a href="https://nonotchi.tech/" target="_blank"><div class="document-card" data-document="rules">
+                <a href="#" target="_blank"><div class="document-card" data-document="rules">
                     <h4>活動報告書</h4>
-                    <p class="date">2025-08-05</p>
+                    <div class="card-head">
+                        <span class="category test">テスト</span>
+                        <span class="date">2025-08-05</span>
+                    </div>
                     <div class="document-img">
                         <img src="images/hero-bg-2.jpg" alt="テスト画像">
                     </div>
                     <p>2024年度の活動実績と成果をまとめた報告書です。テスト文章テスト文章テスト文章テスト文章テスト文章テスト文章テスト文章テスト文章テスト文章</p>
                 </div></a>
-                <a href="https://nonotchi.tech/" target="_blank"><div class="document-card" data-document="guidebook">
+                <a href="#" target="_blank"><div class="document-card" data-document="guidebook">
                     <h4>起業ガイドブック</h4>
-                    <p class="date">2025-08-05</p>
+                    <div class="card-head">
+                        <span class="category test">テスト</span>
+                        <span class="date">2025-08-05</span>
+                    </div>
                     <div class="document-img">
                         <img src="images/hero-bg-3.jpg" alt="テスト画像">
                     </div>
                     <p>学生起業家のための基本的な知識とノウハウをまとめたガイドです。</p>
                 </div></a>
-                <a href="https://nonotchi.tech/" target="_blank"><div class="document-card" data-document="template">
+                <a href="#" target="_blank"><div class="document-card" data-document="template">
                     <h4>ビジネスプランテンプレート</h4>
+                    <div class="card-head">
+                        <span class="category test">テスト</span>
+                        <span class="date">2025-08-05</span>
+                    </div>
                     <div class="document-img">
                         <img src="images/hero-bg-11.jpg" alt="テスト画像">
                     </div>
                     <p>効果的なビジネスプランを作成するためのテンプレート集です。</p>
                 </div></a>
-                <a href="https://nonotchi.tech/" target="_blank"><div class="document-card" data-document="members">
+                <a href="#" target="_blank"><div class="document-card" data-document="members">
                     <h4>メンバー紹介</h4>
+                    <div class="card-head">
+                        <span class="category test">テスト</span>
+                        <span class="date">2025-08-05</span>
+                    </div>
                     <div class="document-img">
                         <img src="images/hero-bg-12.jpg" alt="テスト画像">
                     </div>
                     <p>サークルメンバーの紹介とそれぞれの起業プロジェクトについて。</p>
                 </div></a>
-                <a href="https://nonotchi.tech/" target="_blank"><div class="document-card" data-document="events">
+                <a href="#" target="_blank"><div class="document-card" data-document="events">
                     <h4>イベント企画書</h4>
+                    <div class="card-head">
+                        <span class="category test">テスト</span>
+                        <span class="date">2025-08-05</span>
+                    </div>
                     <div class="document-img">
                         <img src="images/hero-bg-13.jpg" alt="テスト画像">
                     </div>
@@ -170,8 +224,8 @@
                 <div class="footer-section">
                     <h5>SNS・ブログ</h5>
                     <a href="#twitter" target="_blank" rel="noopener">
-                        <i class="fab fa-twitter me-2"></i>
-                        Twitter
+                        <i class="fab fa-x-twitter me-2"></i>
+                        X(旧Twitter)
                     </a>
                     <a href="#instagram" target="_blank" rel="noopener">
                         <i class="fab fa-instagram me-2"></i>

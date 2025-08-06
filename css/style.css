@@ -541,6 +541,7 @@ body {
 
 .documents-grid a {
     text-decoration: none;
+    color: #666;
 }
 
 .document-card {
@@ -558,8 +559,23 @@ body {
     border: 2px solid transparent;
 }
 
-.document-card .date {
-    text-align: right;
+.card-head {
+    position: relative;
+    height: fit-content;
+    text-align: left;
+    height: 2rem;
+}
+.card-head .category {
+    position: absolute;
+    font-size: small;
+    background-color: #666;
+    color: #fff;
+    padding: 2px 15px;
+    border-radius: 5px;
+}
+.card-head .date {
+    position: absolute;
+    right: 0;
 }
 
 .document-card:hover {
@@ -625,7 +641,6 @@ body {
 .footer-section a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    display: block;
     margin-bottom: 10px;
     transition: all 0.3s ease;
     display: flex;
@@ -848,4 +863,80 @@ body {
     .document-icon {
         font-size: 2.5rem;
     }
+}
+
+/* メニュー */
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    background-color: #3470a5;
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+}
+.menu-btn.close {
+    z-index: 13;
+}
+#menu-open, #menu-close {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+.menu-btn i {
+    position: absolute;
+    top: 10px;
+    font-size: 40px;
+}
+.menu-btn div {
+    position: absolute;
+    bottom: 5px;
+    font-size: 15px;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100lvh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+    animation: fadein .3s forwards;
+}
+.menu-body {
+    position: fixed;
+    right: 0;
+    width: 80vw;
+    height: 100lvh;
+    background-color: #fff;
+    z-index: 12;
+    animation: slidein .3s forwards;
+    padding: 100px 20px 20px;
+}
+
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes slidein {
+    0% {right: -100vw;}
+    100% {right: 0;}
+}
+
+/* お知らせ */
+.information {
+    background-color: #fafafa;
+    padding: 10px 20px;
+}
+.information ul {
+    margin: 10px 0;
+}
+.information a {
+    color: #333;
 }
