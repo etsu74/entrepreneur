@@ -28,13 +28,16 @@ const video = document.querySelectorAll('video')[0];
 
 if (video) {
     video.play();
+    video.addEventListener('ended', initBackgroundSlider);
+} else {
+    video.addEventListener('ended', initBackgroundSlider);
 }
 
-video.addEventListener('ended', initBackgroundSlider);
-
 function initBackgroundSlider() {
-    video.style.transition = 'opacity 2s ease-in-out';
-    video.style.opacity = '0';   // 動画を非表示
+    if (video) {
+        video.style.transition = 'opacity 2s ease-in-out';
+        video.style.opacity = '0';   // 動画を非表示
+    }
     
     const slides = document.querySelectorAll('.background-slide');
     let currentSlide = 0;
