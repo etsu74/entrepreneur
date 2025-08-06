@@ -5,7 +5,7 @@
 
 // DOM読み込み完了後に実行
 document.addEventListener('DOMContentLoaded', function() {
-    initBackgroundSlider();
+    // initBackgroundSlider();
     initSmoothScroll();
     initEventScroll();
     initDocumentCards();
@@ -23,18 +23,26 @@ window.addEventListener('resize', function() {
 /**
 背景スライダーのアニメーション（クロスフェード効果）
  */
+
+const video = document.querySelectorAll('video')[0];
+
+if (video) {
+    video.play();
+}
+
+video.addEventListener('ended', initBackgroundSlider);
+
 function initBackgroundSlider() {
+    video.style.transition = 'opacity 2s ease-in-out';
+    video.style.opacity = '0';   // 動画を非表示
+    
     const slides = document.querySelectorAll('.background-slide');
     let currentSlide = 0;
     let isTransitioning = false; // トランジション中の重複実行を防ぐ
 
     if (slides.length === 0) return;
 
-    // デバッグ用：スライド要素の確認
-    console.log('Found slides:', slides.length);
-    slides.forEach((slide, index) => {
-        console.log(`Slide ${index}:`, slide.className);
-    });
+    slides[0].classList.add('active');
 
     // 初期化：最初のスライドを薄い状態で準備
     function initFirstSlide() {
