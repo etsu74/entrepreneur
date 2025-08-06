@@ -30,7 +30,7 @@ if (video) {
     video.play();
     video.addEventListener('ended', initBackgroundSlider);
 } else {
-    video.addEventListener('ended', initBackgroundSlider);
+    initBackgroundSlider();
 }
 
 function initBackgroundSlider() {
