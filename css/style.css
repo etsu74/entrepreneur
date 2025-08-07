@@ -134,6 +134,25 @@ body {
     z-index: -2;
 }
 
+.background-slider video {
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    max-height: 100lvh;
+    left: 50%;
+	object-fit: cover;
+    animation: video-sp-anime 5s forwards;
+}
+
+@keyframes video-sp-anime {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    100% {
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
 .background-slide {
     position: absolute;
     top: 0;
