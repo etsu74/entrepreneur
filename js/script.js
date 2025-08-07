@@ -271,18 +271,24 @@ function initEventScroll() {
 /**
  * ドキュメントカードのインタラクション
  */
+
+mouseEnterEffect = (e) => {
+    e.target.style.transform = 'translateY(-10px) scale(1.02)';
+}
+mouseLeaveEffect = (e) => {
+    e.target.style.transform = 'translateY(0) scale(1)';
+}
+
 function initDocumentCards() {
     const cards = document.querySelectorAll('.document-card');
     
     cards.forEach(card => {
-        // ホバーエフェクトの強化
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
+        // 重複防止のため一旦削除
+        card.removeEventListener('mouseenter', mouseEnterEffect);
+        card.removeEventListener('mouseleave', mouseLeaveEffect);
 
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
+        card.addEventListener('mouseenter', mouseEnterEffect);
+        card.addEventListener('mouseleave', mouseLeaveEffect);
     });
 }
 
@@ -773,6 +779,9 @@ document.getElementById('more').addEventListener('click', () => {
 
         documentsArea.innerHTML += newDom;
     }
+
+    // アニメーション更新
+    initDocumentCards();
 });
 
 // メニュー
